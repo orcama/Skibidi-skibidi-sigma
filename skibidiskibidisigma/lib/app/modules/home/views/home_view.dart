@@ -212,6 +212,8 @@ class HomeView extends GetView<HomeController> {
               Get.toNamed(Routes.SEARCH);
             } else if (index == 2) {
               Get.toNamed(Routes.PLAN);
+            } else if (index == 4) {
+              Get.toNamed(Routes.AKUN);
             } else {
               print('Feature not available yet');
             }
