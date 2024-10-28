@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:skibidiskibidisigma/app/modules/Trip/bindings/trip_binding.dart';
+import 'package:skibidiskibidisigma/app/modules/Trip/views/trip_view.dart';
 import 'package:skibidiskibidisigma/app/modules/akun/bindings/akun_binding.dart';
 import 'package:skibidiskibidisigma/app/modules/akun/views/akun_view.dart';
 import 'package:skibidiskibidisigma/app/modules/search/bindings/search_binding.dart';
@@ -21,7 +23,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.PLAN;
 
   static final routes = [
     GetPage(
@@ -62,6 +64,11 @@ class AppPages {
       name: _Paths.AKUN,
       page: () => const akunView(),
       binding: akunBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRIP,
+      page: () => TripView(),
+      binding: TripBinding(),
     ),
   ];
 }

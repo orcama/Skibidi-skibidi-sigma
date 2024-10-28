@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:skibidiskibidisigma/app/modules/Plan/views/map_views.dart';
+import 'package:skibidiskibidisigma/app/modules/Template/views/home_view.dart';
+import 'package:skibidiskibidisigma/app/modules/Trip/views/trip_view.dart';
 import '../controllers/plan_controller.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geolocator/geolocator.dart';
@@ -173,6 +175,7 @@ class PlanView extends GetView<PlanController> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          Get.to(() => TripView());
           Get.bottomSheet(
             BuatTripForm(), // Show the bottom sheet with the form
             backgroundColor: Colors.white,
@@ -200,7 +203,7 @@ class BuatTripForm extends StatelessWidget {
   final RxDouble destinationLatitude = 0.0.obs;
   final RxDouble destinationLongitude = 0.0.obs;
 
-   BuatTripForm({super.key}) {
+  BuatTripForm({super.key}) {
     if (planController.isEditing.value &&
         planController.editingTripIndex.value >= 0) {
       final trip = planController.trips[planController.editingTripIndex.value];
@@ -304,7 +307,7 @@ class BuatTripForm extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 20),
               const Text('Skibidi'),
               const SizedBox(height: 10),
